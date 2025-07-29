@@ -112,4 +112,8 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
 }
 
+// ✅ Bind to Render's dynamic port
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
+
 app.Run();
