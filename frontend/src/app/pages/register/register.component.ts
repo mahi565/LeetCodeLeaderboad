@@ -103,7 +103,7 @@ export class RegisterComponent {
     const registerPayload = {
       email: this.userData.email,
       password: this.userData.password,
-      LeetCodeUsername: this.userData.leetCodeUsername // 👈 fixed casing here
+      leetCodeUsername: this.userData.leetCodeUsername // 👈 fixed casing here
     };
 
     this.authService.register(registerPayload).subscribe({
