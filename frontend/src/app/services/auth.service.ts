@@ -43,8 +43,8 @@ export class AuthService {
 
   register(data: RegisterRequest): Observable<AuthResponse> {
     const payload = {
-      Email: data.email,
-      Password: data.password,
+      email: data.email,
+      password: data.password,
       leetCodeUsername: data.leetCodeUsername ?? ''
     };
 
