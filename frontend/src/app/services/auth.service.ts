@@ -42,7 +42,13 @@ export class AuthService {
   }
 
   register(data: RegisterRequest): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${environment.apiUrl}/auth/register`, data)
+    const payload = {
+      Email: data.email,
+      Password: data.password,
+      LeetCodeUsername: data.leetCodeUsername ?? ''
+    };
+
+    return this.http.post<AuthResponse>(`${environment.apiUrl}/auth/register`, payload)
       .pipe(tap(response => this.setSession(response)));
   }
 
