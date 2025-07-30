@@ -51,8 +51,8 @@ import { AuthService, RegisterRequest } from '../../services/auth.service';
           </label>
           <input
             type="text"
-            id="leetCodeUsername"
-            name="leetCodeUsername"
+            id="LeetCodeUsername"
+            name="LeetCodeUsername"
             [(ngModel)]="userData.leetCodeUsername"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter your LeetCode username"
