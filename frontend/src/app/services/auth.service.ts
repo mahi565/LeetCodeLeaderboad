@@ -45,7 +45,7 @@ export class AuthService {
     const payload = {
       Email: data.email,
       Password: data.password,
-      LeetCodeUsername: data.leetCodeUsername ?? ''
+      leetCodeUsername: data.leetCodeUsername ?? ''
     };
 
     return this.http.post<AuthResponse>(`${environment.apiUrl}/auth/register`, payload)
