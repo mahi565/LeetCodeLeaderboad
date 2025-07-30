@@ -51,8 +51,8 @@ import { AuthService, RegisterRequest } from '../../services/auth.service';
           </label>
           <input
             type="text"
-            id="LeetCodeUsername"
-            name="LeetCodeUsername"
+            id="leetCodeUsername"
+            name="leetCodeUsername"
             [(ngModel)]="userData.leetCodeUsername"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter your LeetCode username"
@@ -100,7 +100,13 @@ export class RegisterComponent {
     this.loading = true;
     this.error = '';
 
-    this.authService.register(this.userData).subscribe({
+    const registerPayload = {
+      email: this.userData.email,
+      password: this.userData.password,
+      LeetCodeUsername: this.userData.leetCodeUsername // 👈 fixed casing here
+    };
+
+    this.authService.register(registerPayload).subscribe({
       next: () => {
         this.router.navigate(['/dashboard']);
       },
