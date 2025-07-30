@@ -13,6 +13,7 @@ namespace LeetCodeTracker.API.DTOs
     public string Password { get; set; } = string.Empty;
 
     [Required]
+    [JsonPropertyName("leetCodeUsername")]
     public string LeetCodeUsername { get; set; } = string.Empty;
 }
 
